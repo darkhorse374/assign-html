@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HECEHOME</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #5ec2ff;
+      --secondary-color: #152733;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    .btn {
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      border: none;
+      border-radius: 50px;
+      height: 40px;
+      padding: 0 25px;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.2s all ease;
+    }
+
+    .btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--secondary-color);
+      padding: 16px 0;
+    }
+
+    .navbar .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .navbar .wrapper .logo {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 24px;
+    }
+
+    .navbar .wrapper ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .navbar .wrapper ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: 0.2s all ease;
+    }
+
+    .navbar .wrapper ul li a:hover,
+    .navbar .wrapper ul li a.active {
+      color: var(--primary-color);
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider .img-box {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .img-box img {
+      min-height: 100vh;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .slider .img-box .content {
+      position: absolute;
+      top: 45%;
+      right: 0;
+      transform: translateY(-50%);
+      max-width: 600px;
+      width: 100%;
+      display: block;
+      padding: 15px;
+    }
+
+    .slider .img-box .content h2 {
+      color: white;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+
+    .slider .img-box .content p {
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+      margin-top: 20px;
+    }
+
+    .slider .img-box .content form {
+      margin-top: 50px;
+    }
+
+    .slider .img-box .content form .search {
+      position: relative;
+    }
+
+    .slider .img-box .content form .search input {
+      width: 100%;
+      height: 50px;
+      border-radius: 50px;
+      padding: 0 18px;
+      padding-right: 54px;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      outline: none;
+    }
+
+    .slider .img-box .content form .search svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary-color);
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+    }
+
+    .slider .img-box .content form button {
+      width: 100%;
+      height: 50px;
+      border-radius: 50px;
+      padding: 0 18px;
+      border: none;
+      font-size: 22px;
+      font-weight: 600;
+      background-color: var(--primary-color);
+      color: white;
+      text-transform: uppercase;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      padding: 10px;
+      z-index: 10;
+      background: none;
+      border: none;
+      padding: 0;
+      display: none;
+    }
+
+    .arrow svg {
+      width: 40px;
+      height: 40px;
+      color: white;
+    }
+
+    .left {
+      left: 30px;
+    }
+
+    .right {
+      right: 30px;
+    }
+
+    /* Courses */
+    .courses {
+      margin: 50px 0;
+    }
+
+    .courses .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px 0;
+    }
+
+    .courses .wrapper .item {
+      width: 320px;
+      text-align: center;
+      border-left: 1px solid #eee;
+      border-right: 1px solid #eee;
+      padding: 0 10px;
+    }
+
+    .courses .wrapper .item img {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .courses .wrapper .item h3 {
+      margin-top: 16px;
+      font-size: 25px;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+    }
+
+    .courses .wrapper .item p {
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .courses .wrapper .item .button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      text-decoration: none;
+      padding: 8px 22px;
+      font-weight: 500;
+      border-radius: 50px;
+      display: inline-block;
+    }
+
+    .description {
+      margin: 2vh 7vw;
+    }
+
+    .description .container {
+      padding-bottom: 30px;
+    }
+
+    .desc_text {
+      display: block;
+    }
+
+    .dis {
+      display: block !important;
+    }
+
+    .desc_text h3 {
+      font-size: 40px;
+      padding-bottom: 20px;
+    }
+
+    .desc_text .img-box {
+      flex: 50%;
+      order: 2;
+    }
+
+    .desc_text .img-box2 {
+      flex: 50%;
+      order: 0;
+    }
+
+    .desc_text .text-box {
+      flex: 50%;
+      order: 1;
+    }
+
+    .desc_text li {
+      font-size: 25px;
+      padding-bottom: 10px;
+    }
+
+    .women-image {
+      width: 40vw;
+      padding-bottom: 30px;
+    }
+
+    .women-image2 {
+      width: 40vw;
+      padding-bottom: 30px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      .women-image {
+        padding-left: 30px;
+      }
+
+      .women-image2 {
+        padding-right: 50px;
+      }
+
+      .img-box img {
+        max-height: 900px;
+        min-height: unset;
+      }
+
+      .slider .img-box .content {
+        top: 50%;
+        right: 10%;
+      }
+
+      .slider .img-box .content h2 {
+        font-size: 40px;
+      }
+
+      .desc_text {
+        display: flex;
+      }
+
+      .arrow {
+        display: block;
+      }
+    }
+
+    @media only screen and (min-width: 2000px) {
+      .slider .img-box .content {
+        left: calc(1200px + 10%);
+        right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="wrapper">
+        <div>
+          <a href="#" class="logo">HECEHOME</a>
+        </div>
+
+        <ul>
+          <li>
+            <a href="#" class="active">Home</a>
+          </li>
+          <li>
+            <a href="#">
+              <div>Famous valedictorians</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>About Us</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>Our Platforms</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>Sample Profile</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>Valedictorian Facts</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div>Contact Us</div>
+            </a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                clip-rule="evenodd" />
+            </svg>
+            Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Slider -->
+    <div class="slider">
+      <div class="img-box">
+        <img src="images/1.jpg" alt="" />
+        <div class="content">
+          <h2>Search by Academic Excellence</h2>
+          <p>
+            Filter by GPA, SAT scores, and college attendance.
+          </p>
+          <form>
+            <div class="search">
+              <input type="text" placeholder="Search..." />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd"
+                  d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <button>Start Searching</button>
+          </form>
+        </div>
+      </div>
+
+      <button class="arrow left" onclick="changeSlide(-1)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+          <path fill-rule="evenodd"
+            d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+            clip-rule="evenodd" />
+        </svg>
+      </button>
+      <button class="arrow right" onclick="changeSlide(1)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+          <path fill-rule="evenodd"
+            d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+            clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Courses -->
+    <div class="courses">
+      <div>
+        <div class="wrapper">
+          <div class="item">
+            <img src="images/1.png" alt="" />
+
+            <h3>
+              Jeff Bezos
+            </h3>
+            <div class="bottom">
+              <p>
+                Founder Amazon
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/2.png" alt="" />
+
+            <h3>
+              John Roberts
+            </h3>
+            <div class="bottom">
+              <p>
+                Chief Justice
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/3.png" alt="" />
+
+            <h3>
+              Mae Jemison
+            </h3>
+            <div class="bottom">
+              <p>
+                Former astronaut
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/4.png" alt="" />
+
+            <h3>
+              David Petraeus
+            </h3>
+            <div class="bottom">
+              <p>
+                Army General
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/5.png" alt="" />
+
+            <h3>
+              Sonia Sotomayer
+            </h3>
+            <div class="bottom">
+              <p>
+                Supreme Court Justice
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/6.png" alt="" />
+
+            <h3>
+              Steve Ballmer
+            </h3>
+            <div class="bottom">
+              <p>
+                Former CEO Microsoft
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/7.png" alt="" />
+
+            <h3>
+              Susan Collins
+            </h3>
+            <div class="bottom">
+              <p>
+                Senator Maine
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/8.png" alt="" />
+
+            <h3>
+              Alicia Keys
+            </h3>
+            <div class="bottom">
+              <p>
+                Grammy R&B Artist
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/9.png" alt="" />
+
+            <h3>
+              Douglas MacArthur
+            </h3>
+            <div class="bottom">
+              <p>
+                Military General
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/10.png" alt="" />
+
+            <h3>
+              Maria Shriver
+            </h3>
+            <div class="bottom">
+              <p>
+                Founder Amazon
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/11.png" alt="" />
+
+            <h3>
+              George Stephanopoulos
+            </h3>
+            <div class="bottom">
+              <p>
+                Legendary interviewer and broadcaster
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/12.png" alt="" />
+
+            <h3>
+              Ginni Rometty
+            </h3>
+            <div class="bottom">
+              <p>
+                Former CEO, IBM
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/13.png" alt="" />
+
+            <h3>
+              Marissa Mayer
+            </h3>
+            <div class="bottom">
+              <p>
+                Former CEO Yahoo
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/14.png" alt="" />
+
+            <h3>
+              Ben Sasse
+            </h3>
+            <div class="bottom">
+              <p>
+                Senator Nebraska
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/15.png" alt="" />
+
+            <h3>
+              Jeremy Lin
+            </h3>
+            <div class="bottom">
+              <p>
+                Professional Basketball
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/16.png" alt="" />
+
+            <h3>
+              Richard Nixon
+            </h3>
+            <div class="bottom">
+              <p>
+
+                37th President
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/17.png" alt="" />
+
+            <h3>
+              Conan O’Brien
+            </h3>
+            <div class="bottom">
+              <p>
+                TV Host/Actor
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/18.png" alt="" />
+
+            <h3>
+              Ben Carson
+            </h3>
+            <div class="bottom">
+              <p>
+                Secretary of Housing and Urban Development
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/19.png" alt="" />
+
+            <h3>
+              Ben Bernanke
+            </h3>
+            <div class="bottom">
+              <p>
+                Chairman Federal Reserves
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/20.png" alt="" />
+
+            <h3>
+              Sanjay Gupta
+            </h3>
+            <div class="bottom">
+              <p>
+                CNN Medical Correspondence
+              </p>
+              <a href="#" class="button">More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="description">
+      <div class="container">
+        <div class="desc_text">
+          <div class="img-box">
+            <img src="images/women_1.jpeg" alt="women_1" class="women-image">
+          </div>
+          <div class="text-box">
+            <h3>
+              Academic and Career Success
+            </h3>
+            <ul>
+              <li>
+                <b>Top College Attendance:</b> A majority of valedictorians attend
+                prestigious universities, with many going to Ivy League or
+                top-tier schools.
+              </li>
+              <li>
+                <b>High GPAs:</b> Most valedictorians graduate with nearly perfect
+                GPAs, often 4.0 or higher.
+              </li>
+              <li>
+                <b>Advanced Courses:</b> They frequently take AP, IB, or
+                dual-enrollment classes.
+              </li>
+              <li>
+                <b>Scholarships:</b> Many earn merit-based scholarships due to
+                their academic excellence.
+              </li>
+              <li>
+                Long-term career and Financial Outcomes
+              </li>
+              <li>
+                <b>Successful but Not Always the Wealthiest:</b> A study by Dr. Karen Arnold found that while
+                valedictorians
+                often have successful careers, they are less likely to become millionaires or high-profile industry
+                disruptors.
+              </li>
+              <li>
+                <b>Leadership vs. Stability:</b> They tend to excel in structured environments but are less likely to
+                take
+                high-risk entrepreneurial paths.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="desc_text">
+          <ul>
+            <li>
+              <b>High Employment Rates:</b> They often work in stable, well-paying professions such as medicine, law,
+              and
+              engineering.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="desc_text">
+          <div class="img-box img-box2">
+            <img src="images/women_2.jpeg" alt="women_2" class="women-image2">
+          </div>
+          <div class="text-box">
+            <h3>
+              Gender Differences Among Valedictorians
+            </h3>
+            <ul>
+              <li>
+                <b>More Female Valedictorians:</b> Studies show that around 60-70% of high
+                school valedictorians are female. This is often attributed to higher academic diligence, better
+                organizational skills, and fewer disciplinary issues among female students.
+              </li>
+              <li>
+                <b>Different Career Choices:</b> Male valedictorians are more likely to pursue STEM (Science,
+                Technology, Engineering, Math) and entrepreneurship, while female valedictorians tend to enter
+                healthcare, education, or law.
+              </li>
+              <li>
+                <b>Salary Disparities:</b> Despite early academic success, male valedictorians often
+                out-earn their female counterparts later in life due to industry differences and the gender pay gap.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="desc_text dis">
+          <h3>
+            Career Trends of Valedictorians
+          </h3>
+          <ul>
+            <li>
+              <b>High-Achieving but Not Revolutionary:</b> Research by Dr.
+              Karen Arnold found that valedictorians excel in traditional career paths but rarely become groundbreaking
+              leaders or disruptors.
+            </li>
+            <li>
+              <b>Preference for Stability:</b> They often pursue structured careers in law, medicine, academia, and
+              corporate leadership rather than high-risk entrepreneurial ventures.
+            </li>
+            <li>
+              <b>Fewer Billionaires:</b> A Forbes study found that many self-made billionaires
+              were not valedictorians, as risk-taking and unconventional thinking often drive massive financial success.
+            </li>
+            <li>
+              <b>High Educational Attainment:</b> Most valedictorians pursue advanced
+              degrees—master’s, Ph.D.s, MDs, or JDs—leading to respected but often predictable careers.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    let currentSlide = 0;
+    const slides = ["images/1.jpg", "images/2.jpg"];
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1; // Loop to last slide
+      } else if (currentSlide >= slides.length) {
+        currentSlide = 0; // Loop to first slide
+      }
+
+      updateSlide();
+    }
+
+    function updateSlide() {
+      const imgBox = document.querySelector(".slider .img-box img");
+      imgBox.src = slides[currentSlide];
+
+      // Update content for the current slide if needed (optional)
+      const content = [
+        {
+          title: "Search by Academic Excellence",
+          text: `Filter by GPA, SAT scores, and college attendance.`,
+        },
+        {
+          title: "Find the Right Skills",
+          text: `Search for valedictorians with leadership, technical, and analytical skills.`,
+        }
+      ];
+
+      const currentContent = content[currentSlide];
+      const contentBox = document.querySelector(".slider .img-box .content");
+      contentBox.querySelector("h2").textContent = currentContent.title;
+      contentBox.querySelector("p").textContent = currentContent.text;
+    }
+
+    // Initialize the slider
+    updateSlide();
+  </script>
+</body>
+
+</html>
