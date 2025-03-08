@@ -89,7 +89,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 80vw;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .navbar .wrapper ul li a {
@@ -122,6 +124,11 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+
+    .img-box1 {
+      max-width: 100%;
+      height: auto;
     }
 
     .slider .img-box .content {
@@ -296,7 +303,7 @@
       padding-bottom: 20px;
     }
 
-    .desc_text .img-box {
+    .desc_text .img-box1 {
       flex: 50%;
       order: 2;
     }
@@ -317,21 +324,23 @@
     }
 
     .women-image {
-      width: 40vw;
+      width: 80vw;
       padding-bottom: 30px;
     }
 
     .women-image2 {
-      width: 40vw;
+      width: 80vw;
       padding-bottom: 30px;
     }
 
     @media only screen and (min-width: 1440px) {
       .women-image {
+        width: 40vw;
         padding-left: 30px;
       }
 
       .women-image2 {
+        width: 40vw;
         padding-right: 50px;
       }
 
@@ -757,7 +766,7 @@
     <div class="description">
       <div class="container">
         <div class="desc_text">
-          <div class="img-box">
+          <div class="img-box1">
             <img src="images/women_1.jpeg" alt="women_1" class="women-image">
           </div>
           <div class="text-box">
@@ -811,7 +820,7 @@
       </div>
       <div class="container">
         <div class="desc_text">
-          <div class="img-box img-box2">
+          <div class="img-box1 img-box2">
             <img src="images/women_2.jpeg" alt="women_2" class="women-image2">
           </div>
           <div class="text-box">
