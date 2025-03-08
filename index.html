@@ -71,6 +71,12 @@
       z-index: 1000;
     }
 
+    @media screen and (max-width: 480px) {
+      .navbar {
+        display: none;
+      }
+    }
+
     .navbar .wrapper {
       display: flex;
       justify-content: center;
@@ -163,15 +169,16 @@
       margin-top: 5px;
     }
 
-    .content form {
+    form {
       margin-top: 20px;
     }
 
-    .content form .search {
+    .search {
       position: relative;
     }
 
-    .content form .search input {
+    .search input {
+      border: #152733 1px solid;
       width: 100%;
       height: 35px;
       border-radius: 17.5px;
@@ -183,7 +190,7 @@
       outline: none;
     }
 
-    .content form .search svg {
+    .search svg {
       width: 20px;
       height: 20px;
       color: var(--primary-color);
@@ -193,7 +200,7 @@
       transform: translateY(-50%);
     }
 
-    .content form button {
+    form button {
       width: 100%;
       height: 35px;
       border-radius: 17.5px;
@@ -341,63 +348,65 @@
 
     @media only screen and (min-width: 1440px) {
       .content h2 {
-      color: white;
-      font-size: 30px;
-      text-transform: uppercase;
-    }
+        color: white;
+        font-size: 30px;
+        text-transform: uppercase;
+      }
 
-    .content p {
-      color: white;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 30px;
-      margin-top: 20px;
-    }
+      .content p {
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-top: 20px;
+      }
 
-    .content form {
-      margin-top: 50px;
-    }
+      .content form {
+        margin-top: 50px;
+      }
 
-    .content form .search {
-      position: relative;
-    }
+      .content form .search {
+        position: relative;
+      }
 
-    .content form .search input {
-      width: 100%;
-      height: 50px;
-      border-radius: 50px;
-      padding: 0 18px;
-      padding-right: 54px;
-      border: none;
-      font-size: 18px;
-      font-weight: 500;
-      outline: none;
-    }
+      .search input {
+        border: #152733 1px solid;
+        width: 100%;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0 18px;
+        padding-right: 54px;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        outline: none;
+      }
 
-    .content form .search svg {
-      width: 28px;
-      height: 28px;
-      color: var(--primary-color);
-      position: absolute;
-      top: 50%;
-      right: 18px;
-      transform: translateY(-50%);
-    }
+      .search svg {
+        width: 28px;
+        height: 28px;
+        color: var(--primary-color);
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+      }
 
-    .content form button {
-      width: 100%;
-      height: 50px;
-      border-radius: 50px;
-      padding: 0 18px;
-      border: none;
-      font-size: 22px;
-      font-weight: 600;
-      background-color: var(--primary-color);
-      color: white;
-      text-transform: uppercase;
-      margin-top: 15px;
-      cursor: pointer;
-    }
+      .content form button {
+        width: 100%;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0 18px;
+        border: none;
+        font-size: 22px;
+        font-weight: 600;
+        background-color: var(--primary-color);
+        color: white;
+        text-transform: uppercase;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+
       .women-image {
         width: 40vw;
         padding-left: 30px;
@@ -442,76 +451,113 @@
       }
 
       .content h2 {
-      color: white;
-      font-size: 40px;
-      text-transform: uppercase;
+        color: white;
+        font-size: 40px;
+        text-transform: uppercase;
+      }
+
+      .content p {
+        color: white;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-top: 20px;
+      }
+
+      .content form {
+        margin-top: 50px;
+      }
+
+      .content form .search {
+        position: relative;
+      }
+
+      .search input {
+        border: #152733 1px solid;
+        width: 100%;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0 18px;
+        padding-right: 54px;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        outline: none;
+      }
+
+      .content form .search svg {
+        width: 28px;
+        height: 28px;
+        color: var(--primary-color);
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+      }
+
+      .content form button {
+        width: 100%;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0 18px;
+        border: none;
+        font-size: 22px;
+        font-weight: 600;
+        background-color: var(--primary-color);
+        color: white;
+        text-transform: uppercase;
+        margin-top: 15px;
+        cursor: pointer;
+      }
     }
 
-    .content p {
-      color: white;
-      font-size: 30px;
-      font-weight: 500;
-      line-height: 30px;
-      margin-top: 20px;
-    }
-
-    .content form {
-      margin-top: 50px;
-    }
-
-    .content form .search {
-      position: relative;
-    }
-
-    .content form .search input {
-      width: 100%;
-      height: 50px;
-      border-radius: 50px;
-      padding: 0 18px;
-      padding-right: 54px;
-      border: none;
-      font-size: 18px;
-      font-weight: 500;
-      outline: none;
-    }
-
-    .content form .search svg {
-      width: 28px;
-      height: 28px;
-      color: var(--primary-color);
+    .hamberger {
       position: absolute;
-      top: 50%;
-      right: 18px;
-      transform: translateY(-50%);
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      z-index: 1000;
+      margin-left: 10px;
     }
 
-    .content form button {
-      width: 100%;
-      height: 50px;
-      border-radius: 50px;
-      padding: 0 18px;
-      border: none;
-      font-size: 22px;
-      font-weight: 600;
-      background-color: var(--primary-color);
-      color: white;
-      text-transform: uppercase;
-      margin-top: 15px;
-      cursor: pointer;
+    @media screen and (min-width: 1000px) {
+      .hamberger {
+        display: none;
+      }
+      #searchForm2 {
+        display: none;
+      }
+
+      
+
     }
+
+    @media screen and (max-width: 1000px) {
+      #searchForm1 {
+        display: none;
+      }
+
+      .content h2 {
+        font-size: 20px;
+        margin-top: 150px;
+      }
+
+      .content p {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
   <div style="height: 100vh;overflow-y: scroll;  z-index: 1000; ">
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <div class="container">
         <div class="wrapper">
           <div class="logo-container">
             <a href="#" class="logo">HECEHOME</a>
           </div>
-  
+
           <ul>
             <li>
               <a href="#" class="active">Home</a>
@@ -547,7 +593,7 @@
               </a>
             </li>
           </ul>
-  
+
           <div>
             <a class="btn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -560,18 +606,21 @@
         </div>
       </div>
     </nav>
-  
     <main>
+
       <!-- Slider -->
       <div class="slider">
         <div class="img-box1">
+          <div class="hamberger" onclick="handleClickHamberger()">
+            =
+          </div>
           <img src="images/1.jpg" alt="" class="img-box1" />
           <div class="content">
             <h2>Famous high school valedictorians</h2>
             <p>
               Filter by GPA, SAT scores, and college attendance.
             </p>
-            <form>
+            <form class="searchForm" id="searchForm1">
               <div class="search">
                 <input type="text" placeholder="Search..." />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -584,7 +633,7 @@
             </form>
           </div>
         </div>
-  
+
         <button class="arrow left" onclick="changeSlide(-1)">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
             <path fill-rule="evenodd"
@@ -600,14 +649,26 @@
           </svg>
         </button>
       </div>
-  
+
       <!-- Courses -->
+      <form class="searchForm" id="searchForm2">
+        <div class="search">
+          <input type="text" placeholder="Search..." />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd"
+              d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        <button>Start Searching</button>
+      </form>
+
       <div class="courses">
         <div>
           <div class="wrapper">
             <div class="item">
               <img src="images/1.png" alt="" />
-  
+
               <h3>
                 Jeff Bezos
               </h3>
@@ -618,10 +679,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/2.png" alt="" />
-  
+
               <h3>
                 John Roberts
               </h3>
@@ -632,10 +693,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/3.png" alt="" />
-  
+
               <h3>
                 Mae Jemison
               </h3>
@@ -646,10 +707,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/4.png" alt="" />
-  
+
               <h3>
                 David Petraeus
               </h3>
@@ -660,10 +721,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/5.png" alt="" />
-  
+
               <h3>
                 Sonia Sotomayer
               </h3>
@@ -674,10 +735,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/6.png" alt="" />
-  
+
               <h3>
                 Steve Ballmer
               </h3>
@@ -688,10 +749,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/7.png" alt="" />
-  
+
               <h3>
                 Susan Collins
               </h3>
@@ -702,10 +763,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/8.png" alt="" />
-  
+
               <h3>
                 Alicia Keys
               </h3>
@@ -716,10 +777,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/9.png" alt="" />
-  
+
               <h3>
                 Douglas MacArthur
               </h3>
@@ -730,10 +791,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/10.png" alt="" />
-  
+
               <h3>
                 Maria Shriver
               </h3>
@@ -744,10 +805,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/11.png" alt="" />
-  
+
               <h3>
                 George Stephanopoulos
               </h3>
@@ -758,10 +819,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/12.png" alt="" />
-  
+
               <h3>
                 Ginni Rometty
               </h3>
@@ -772,10 +833,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/13.png" alt="" />
-  
+
               <h3>
                 Marissa Mayer
               </h3>
@@ -786,10 +847,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/14.png" alt="" />
-  
+
               <h3>
                 Ben Sasse
               </h3>
@@ -800,10 +861,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/15.png" alt="" />
-  
+
               <h3>
                 Jeremy Lin
               </h3>
@@ -814,25 +875,25 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/16.png" alt="" />
-  
+
               <h3>
                 Richard Nixon
               </h3>
               <div class="bottom">
                 <p>
-  
+
                   37th President
                 </p>
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/17.png" alt="" />
-  
+
               <h3>
                 Conan O’Brien
               </h3>
@@ -843,10 +904,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/18.png" alt="" />
-  
+
               <h3>
                 Ben Carson
               </h3>
@@ -857,10 +918,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/19.png" alt="" />
-  
+
               <h3>
                 Ben Bernanke
               </h3>
@@ -871,10 +932,10 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
             <div class="item">
               <img src="images/20.png" alt="" />
-  
+
               <h3>
                 Sanjay Gupta
               </h3>
@@ -885,11 +946,11 @@
                 <a href="#" class="button">More</a>
               </div>
             </div>
-  
+
           </div>
         </div>
       </div>
-  
+
       <div class="description">
         <div class="container">
           <div class="desc_text">
@@ -979,7 +1040,8 @@
             <ul>
               <li>
                 <b>High-Achieving but Not Revolutionary:</b> Research by Dr.
-                Karen Arnold found that valedictorians excel in traditional career paths but rarely become groundbreaking
+                Karen Arnold found that valedictorians excel in traditional career paths but rarely become
+                groundbreaking
                 leaders or disruptors.
               </li>
               <li>
@@ -988,7 +1050,8 @@
               </li>
               <li>
                 <b>Fewer Billionaires:</b> A Forbes study found that many self-made billionaires
-                were not valedictorians, as risk-taking and unconventional thinking often drive massive financial success.
+                were not valedictorians, as risk-taking and unconventional thinking often drive massive financial
+                success.
               </li>
               <li>
                 <b>High Educational Attainment:</b> Most valedictorians pursue advanced
@@ -998,29 +1061,39 @@
           </div>
         </div>
       </div>
-  
+
     </main>
-  
+
     <script>
+      let showHambergur = false;
       let currentSlide = 0;
       const slides = ["images/1.jpg", "images/2.jpg"];
-  
+
       function changeSlide(direction) {
         currentSlide += direction;
-  
+
         if (currentSlide < 0) {
           currentSlide = slides.length - 1; // Loop to last slide
         } else if (currentSlide >= slides.length) {
           currentSlide = 0; // Loop to first slide
         }
-  
+
         updateSlide();
       }
-  
+
+      function handleClickHamberger(e) {
+        showHambergur = !showHambergur;
+        if (showHambergur) {
+          document.getElementById('navbar').style.display = 'none';
+        } else {
+          document.getElementById('navbar').style.display = 'block';
+        }
+      }
+
       function updateSlide() {
         const imgBox = document.querySelector(".slider .img-box img");
         imgBox.src = slides[currentSlide];
-  
+
         // Update content for the current slide if needed (optional)
         const content = [
           {
@@ -1032,16 +1105,16 @@
             text: `Search for valedictorians with leadership, technical, and analytical skills.`,
           }
         ];
-  
+
         const currentContent = content[currentSlide];
         const contentBox = document.querySelector(".slider .img-box .content");
         contentBox.querySelector("h2").textContent = currentContent.title;
         contentBox.querySelector("p").textContent = currentContent.text;
       }
-  
+
       // Initialize the slider
       updateSlide();
-    </script>  
+    </script>
   </div>
   <!-- Navbar -->
 </body>
