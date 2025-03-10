@@ -29,10 +29,23 @@
       font-family: "Montserrat", sans-serif;
     }
 
+    .h2title {
+      font-size: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
     .container {
       width: 100%;
       margin: 0 auto;
       padding: 0 30px;
+    }
+
+    .Valhub {
+      height: 52px;
+      width: auto;
     }
 
     .btn {
@@ -57,6 +70,10 @@
       height: 20px;
     }
 
+    #img1 {
+      display: none;
+    }
+
     .btn:hover {
       background-color: var(--primary-color);
       color: white;
@@ -71,15 +88,15 @@
       z-index: 1000;
     }
 
-    @media screen and (max-width: 480px) {
-      .navbar {
-        display: none;
-      }
+    .titleh2 h2 {
+      color: white;
+      font-size: 30px;
+      text-transform: uppercase;
     }
 
     .navbar .wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
@@ -89,7 +106,6 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      text-transform: uppercase;
       font-size: 24px;
     }
 
@@ -99,7 +115,7 @@
       align-items: center;
     }
 
-    .navbar .wrapper ul {
+    .disappear {
       list-style-type: none;
       display: flex;
       align-items: center;
@@ -108,17 +124,16 @@
       flex-wrap: wrap;
     }
 
-    .navbar .wrapper ul li a {
+    .disappear li a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      text-transform: uppercase;
       transition: 0.2s all ease;
       font-size: 15px;
     }
 
-    .navbar .wrapper ul li a:hover,
-    .navbar .wrapper ul li a.active {
+    .disappear li a:hover,
+    .disappear li a.active {
       color: var(--primary-color);
     }
 
@@ -147,7 +162,7 @@
 
     .content {
       position: absolute;
-      top: 45%;
+      top: 50%;
       right: 5%;
       transform: translateY(-50%);
       max-width: 600px;
@@ -264,8 +279,8 @@
     }
 
     .courses .wrapper .item img {
-      width: 200px;
-      height: 200px;
+      width: 160px;
+      height: 160px;
       margin: 0 auto;
       display: block;
     }
@@ -346,68 +361,7 @@
     }
 
     @media only screen and (min-width: 1440px) {
-      .content h2 {
-        color: white;
-        font-size: 40px;
-        text-transform: uppercase;
-      }
-
-      .content {
-        right: 7%;
-      }
-
-      .content p {
-        color: white;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 30px;
-        margin-top: 20px;
-      }
-
-      .content form {
-        margin-top: 50px;
-      }
-
-      .content form .search {
-        position: relative;
-      }
-
-      .search input {
-        border: #152733 1px solid;
-        width: 100%;
-        height: 50px;
-        border-radius: 50px;
-        padding: 0 18px;
-        padding-right: 54px;
-        font-size: 18px;
-        font-weight: 500;
-        outline: none;
-      }
-
-      .search svg {
-        width: 28px;
-        height: 28px;
-        color: var(--primary-color);
-        position: absolute;
-        top: 50%;
-        right: 18px;
-        transform: translateY(-50%);
-      }
-
-      .content form button {
-        width: 100%;
-        height: 50px;
-        border-radius: 50px;
-        padding: 0 18px;
-        border: none;
-        font-size: 22px;
-        font-weight: 600;
-        background-color: var(--primary-color);
-        color: white;
-        text-transform: uppercase;
-        margin-top: 15px;
-        cursor: pointer;
-      }
+      
 
       .women-image {
         width: 40vw;
@@ -514,27 +468,114 @@
 
     .hamberger {
       position: absolute;
-      font-size: 50px;
+      font-size: 40px;
       color: white;
       cursor: pointer;
       z-index: 100;
-      margin-left: 10px;
+      top: 17px;
+      left: 20px;
     }
 
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 1026px) {
       .hamberger {
         display: none;
       }
+
+      .disappear {
+        display: flex !important;
+      }
+
+      .navbar {
+        display: flex !important;
+      }
+
       #searchForm2 {
         display: none;
       }
 
+      .titleh2 {
+        display: none;
+      }
+      .content h2 {
+        color: white;
+        font-size: 40px;
+        text-transform: uppercase;
+      }
+
+      .content {
+        right: 7%;
+      }
+
+      .content p {
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-top: 20px;
+      }
+
+      .content form {
+        margin-top: 50px;
+      }
+
+      .content form .search {
+        position: relative;
+      }
+
+      .search input {
+        border: #152733 1px solid;
+        width: 100%;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0 18px;
+        padding-right: 54px;
+        font-size: 18px;
+        font-weight: 500;
+        outline: none;
+      }
+
+      .search svg {
+        width: 28px;
+        height: 28px;
+        color: var(--primary-color);
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+      }
+
+      .content form button {
+        width: 100%;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0 18px;
+        border: none;
+        font-size: 22px;
+        font-weight: 600;
+        background-color: var(--primary-color);
+        color: white;
+        text-transform: uppercase;
+        margin-top: 15px;
+        cursor: pointer;
+      }
     }
 
     @media screen and (max-width: 640px) {
       .content {
         left: 10px;
         top: 80px;
+      }
+
+      #img1 {
+        display: block;
+      }
+
+      #img2 {
+        display: none;
+      }
+
+      .titleh2 h2 {
+        font-size: 16px;
       }
 
       .content h2 {
@@ -546,9 +587,40 @@
       }
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1026px) {
       #searchForm1 {
         display: none;
+      }
+
+      .h2title {
+        font-size: 20px;
+        margin-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .Valhub {
+        margin: 0 100px;
+      }
+
+      .content {
+        display: none;
+      }
+
+      .titleh2 {
+        display: flex;
+      }
+
+      #disappear {
+        display: none;
+      }
+
+      #disappear1 {
+        display: none;
+      }
+
+      .wrapper {
+        justify-content: center !important;
       }
 
       #searchForm2 {
@@ -590,10 +662,18 @@
       <div class="container">
         <div class="wrapper">
           <div class="logo-container">
-            <a href="#" class="logo">HECEHOME</a>
+            <img src="images/title.png" class="Valhub" alt="title" />
           </div>
-
-          <ul>
+          <div class="hamberger" onclick="handleClickHamberger()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 30 30">
+              <g fill="none" stroke="#fff" stroke-width="2">
+                <line x1="5" y1="7" x2="25" y2="7" />
+                <line x1="5" y1="15" x2="25" y2="15" />
+                <line x1="5" y1="23" x2="25" y2="23" />
+              </g>
+            </svg>
+          </div>
+          <div class="disappear" id="disappear">
             <li>
               <a href="#" class="active">Home</a>
             </li>
@@ -604,22 +684,27 @@
             </li>
             <li>
               <a href="#">
-                <div>About Us</div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div>Our Platforms</div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
                 <div>Sample Profile</div>
               </a>
             </li>
             <li>
               <a href="#">
-                <div>Valedictorian Facts</div>
+                <div>Platforms</div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div>About Us</div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div>Statistics</div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div>FAQ's</div>
               </a>
             </li>
             <li>
@@ -627,9 +712,9 @@
                 <div>Contact Us</div>
               </a>
             </li>
-          </ul>
+          </div>
 
-          <div>
+          <div class="disappear" id="disappear1">
             <a class="btn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path fill-rule="evenodd"
@@ -637,6 +722,12 @@
                   clip-rule="evenodd" />
               </svg>
               Login</a>
+          </div>
+
+          <div class="titleh2">
+            <h2>
+              search by academic excellence
+            </h2>
           </div>
         </div>
       </div>
@@ -646,12 +737,10 @@
       <!-- Slider -->
       <div class="slider">
         <div class="img-box1">
-          <div class="hamberger" onclick="handleClickHamberger()">
-            =
-          </div>
-          <img src="images/1.jpg" alt="" class="img-box1" />
+          <img src="images/1.jpg" alt="" class="img-box1" id="img2" />
+          <img src="images/11.jpeg" alt="" class="img-box1" id="img1" />
           <div class="content">
-            <h2>Famous high school valedictorians</h2>
+            <h2>search by academic excellence</h2>
             <p>
               Filter by GPA, SAT scores, and college attendance.
             </p>
@@ -664,7 +753,6 @@
                     clip-rule="evenodd" />
                 </svg>
               </div>
-              <button>Start Searching</button>
             </form>
           </div>
         </div>
@@ -695,11 +783,13 @@
               clip-rule="evenodd" />
           </svg>
         </div>
-        <button>Start Searching</button>
       </form>
 
       <div class="courses">
         <div>
+          <h2 class="h2title">
+            Some of Our Nation’s Famous High School Valedictorians
+          </h2>
           <div class="wrapper">
             <div class="item">
               <img src="images/1.png" alt="" />
@@ -1023,16 +1113,16 @@
                   often have successful careers, they are less likely to become millionaires or high-profile industry
                   disruptors.
                 </li>
-                <li>
-                  <b>Leadership vs. Stability:</b> They tend to excel in structured environments but are less likely to
-                  take
-                  high-risk entrepreneurial paths.
-                </li>
               </ul>
             </div>
           </div>
           <div class="desc_text">
             <ul>
+              <li>
+                <b>Leadership vs. Stability:</b> They tend to excel in structured environments but are less likely to
+                take
+                high-risk entrepreneurial paths.
+              </li>
               <li>
                 <b>High Employment Rates:</b> They often work in stable, well-paying professions such as medicine, law,
                 and
@@ -1118,10 +1208,12 @@
 
       function handleClickHamberger(e) {
         showHambergur = !showHambergur;
-        if (showHambergur) {
-          document.getElementById('navbar').style.display = 'none';
+        if (!showHambergur) {
+          document.getElementById('disappear').style.display = 'none';
+          document.getElementById('disappear1').style.display = 'none';
         } else {
-          document.getElementById('navbar').style.display = 'block';
+          document.getElementById('disappear').style.display = 'flex';
+          document.getElementById('disappear1').style.display = 'flex';
         }
       }
 
