@@ -148,7 +148,7 @@
     .content {
       position: absolute;
       top: 45%;
-      right: 0;
+      right: 5%;
       transform: translateY(-50%);
       max-width: 600px;
       width: 100%;
@@ -158,13 +158,13 @@
 
     .content h2 {
       color: white;
-      font-size: 15px;
+      font-size: 30px;
       text-transform: uppercase;
     }
 
     .content p {
       color: white;
-      font-size: 10px;
+      font-size: 20px;
       font-weight: 500;
       margin-top: 5px;
     }
@@ -184,7 +184,6 @@
       border-radius: 17.5px;
       padding: 0 18px;
       padding-right: 54px;
-      border: none;
       font-size: 18px;
       font-weight: 500;
       outline: none;
@@ -349,8 +348,12 @@
     @media only screen and (min-width: 1440px) {
       .content h2 {
         color: white;
-        font-size: 30px;
+        font-size: 40px;
         text-transform: uppercase;
+      }
+
+      .content {
+        right: 7%;
       }
 
       .content p {
@@ -376,7 +379,6 @@
         border-radius: 50px;
         padding: 0 18px;
         padding-right: 54px;
-        border: none;
         font-size: 18px;
         font-weight: 500;
         outline: none;
@@ -479,7 +481,6 @@
         border-radius: 50px;
         padding: 0 18px;
         padding-right: 54px;
-        border: none;
         font-size: 18px;
         font-weight: 500;
         outline: none;
@@ -528,8 +529,21 @@
         display: none;
       }
 
-      
+    }
 
+    @media screen and (max-width: 640px) {
+      .content {
+        left: 10px;
+        top: 80px;
+      }
+
+      .content h2 {
+        font-size: 20px !important;
+      }
+
+      .content p {
+        font-size: 13px !important;
+      }
     }
 
     @media screen and (max-width: 1000px) {
@@ -537,12 +551,33 @@
         display: none;
       }
 
+      #searchForm2 {
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+
       .content h2 {
-        font-size: 20px;
+        font-size: 30px;
         margin-top: 150px;
       }
 
       .content p {
+        font-size: 20px;
+      }
+
+      .content {
+        right: 5%;
+      }
+
+      .img-box h3 {
+        font-size: 20px;
+      }
+
+      .desc_text h3 {
+        font-size: 25px;
+      }
+
+      .desc_text li {
         font-size: 15px;
       }
     }
@@ -634,20 +669,20 @@
           </div>
         </div>
 
-        <button class="arrow left" onclick="changeSlide(-1)">
+        <!-- <button class="arrow left" onclick="changeSlide(-1)">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
             <path fill-rule="evenodd"
               d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
               clip-rule="evenodd" />
           </svg>
-        </button>
-        <button class="arrow right" onclick="changeSlide(1)">
+        </button> -->
+        <!-- <button class="arrow right" onclick="changeSlide(1)">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
             <path fill-rule="evenodd"
               d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
               clip-rule="evenodd" />
           </svg>
-        </button>
+        </button> -->
       </div>
 
       <!-- Courses -->
